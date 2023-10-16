@@ -13,7 +13,7 @@ def product_list(request):
 
 def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
-    return render(request, 'product_detail.html', {'product': product})
+    return render(request, 'ordermanagement/product_detail.html', {'product': product})
 
 #orders
 def order_list(request):
@@ -22,6 +22,6 @@ def order_list(request):
 
 def order_detail(request, order_id):
     order = get_object_or_404(Order, pk=order_id)
-    return render(request, 'order_detail.html', {'order': order})
+    return render(request, 'ordermanagement/order_detail.html', {'order': order})
 
 
