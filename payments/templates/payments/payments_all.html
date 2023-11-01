@@ -1,0 +1,11 @@
+{% if payments%}
+<ul>
+    {% for p in payments %}
+    <li>
+        <a href="{% url 'payments:payment_details' p.id %}"> {{ p.amount }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+    <p> No payments available</p>
+{% endif %}
