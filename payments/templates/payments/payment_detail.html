@@ -1,4 +1,3 @@
-<h1>pPaid by {{ payment.paid_by}} on {{payment.trans_date}}</h1>
-<br>
-<h2>Transaction Details: {{payment.transaction_ref}}</h2>
-<h2>Amount paid: {{payment.amount}}</h2>
+AttributeError: Generic detail view PaymentDetailView must be called with either an object pk or a slug in the URLconf. here is my view class PaymentDetailView(generic.DetailView):
+    model = Payment
+    template = "payments/payment_detail.html"

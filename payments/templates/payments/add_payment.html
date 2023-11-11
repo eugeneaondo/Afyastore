@@ -1,0 +1,19 @@
+<form action="{% url 'payments:add_payment' %}" method="post">
+    {% csrf_token %}
+    <fieldset>
+        <h2>Add payments</h2>
+        <legend><input type="text" name="payment_ref" id ="payment_ref" value=""></legend>
+        <legend><input type="number" name="amount" id="amount" value=""></legend>
+        <label>Paid by</label><br>
+        {% for customer in customers %}
+            <input type="search" name="customer" id="customer {{ forloop.counter }}" value="{{ customer.first_name }}">
+        {% endfor %}
+        <label>Payment Method</label>
+        {% for mode in payment_mode %}
+            <input type="select" name="mode" id="mode {{ forloop.counter }}" value="{{ mode.mode }}">
+        {% endfor %}
+    </fieldset>
+    <input type="submit" value="Add Payment">
+
+
+</form>
